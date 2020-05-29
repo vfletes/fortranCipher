@@ -1,4 +1,4 @@
-! encoder/decoder for caesar, atbash, and a1z26 ciphers
+! encoder/decoder for caesar, atbash, and a1z26, combined of before, vigenere, and nihilist limited transposition ciphers
 program ci
 implicit none
     character function cipher()
@@ -29,8 +29,6 @@ implicit none
             print *, 'The message is: ', message
         else if to_lower(entered) == 'nihilist limited transposition' then
             call niCiLi(message, status)
-        else if to_lower(entered) == 'nihilist transposition' then
-            call nihiCi(message, status, key)
             
         print *, 'Do you want to encrypt a message'
         read *, answer
